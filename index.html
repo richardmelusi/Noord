@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rustenburg Noord Primary</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body > .site-wrapper {
+      flex: 1 0 auto;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      background-color: #00274d;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      position: relative;
+    }
+
+    .logo {
+      height: 150px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+
+    nav a:hover {
+      background-color: #cc0000;
+      border-radius: 5px;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .search-form input[type="text"] {
+      padding: 8px 10px;
+      border: none;
+      border-radius: 3px;
+      width: 150px;
+    }
+
+    .search-form button {
+      padding: 8px 12px;
+      background-color: #cc0000;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .search-form button:hover {
+      background-color: #a50000;
+    }
+
+    .hero {
+      background-color: #cc0000;
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background-color: #fff;
+      color: #cc0000;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #ffe6e6;
+    }
+
+    .quick-links {
+      background-color: #f2f2f2;
+      padding: 30px 0;
+    }
+
+    .quick-links h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .quick-links .links {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .quick-links a {
+      background-color: #00274d;
+      color: #fff;
+      padding: 15px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 10px;
+    }
+
+    .quick-links a:hover {
+      background-color: #cc0000;
+    }
+
+    .announcements, .mission-vision, .sponsor {
+      padding: 30px 0;
+    }
+
+    .announcements h3,
+    .mission-vision h3,
+    .sponsor h3 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .announcements ul {
+      list-style: none;
+      padding-left: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .announcements li {
+      margin: 10px 0;
+    }
+
+    .mission-vision p {
+      max-width: 800px;
+      margin: 10px auto;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .mission-text {
+      color: #004080;
+      font-weight: 500;
+    }
+
+    .vision-text {
+      color: #cc0000;
+      font-weight: 500;
+    }
+
+    .student-life {
+      padding: 40px 0;
+      background-color: #f9f9f9;
+    }
+
+    .student-life h3 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .student-columns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .student-columns .column {
+      text-align: center;
+    }
+
+    .student-columns img {
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .overlay-text {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #cc0000;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .student-life-background {
+      background-color: #eef5ff;
+      padding: 40px 0;
+    }
+
+    .sponsor {
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    .sponsor img {
+      height: 300px;
+      margin-top: 15px;
+    }
+
+    footer {
+      background-color: #00274d;
+      color: #fff;
+      padding: 30px 0;
+      margin-top: auto; /* push footer to bottom */
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 15px;
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-content p {
+      margin: 5px 0;
+    }
+
+    .social-media a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 25px;
+      border: 2px solid #fff;
+      border-radius: 30px;
+      background-color: #1877f2;
+      transition: background-color 0.3s, transform 0.3s;
+      font-weight: bold;
+    }
+
+    .social-media a:hover {
+      background-color: #145dbf;
+      transform: scale(1.05);
+    }
+
+    .social-media i {
+      font-size: 2.2rem;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #00274d;
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .search-form {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 399px) {
+      .student-columns {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-wrapper">
+    <header>
+      <div class="container header-flex">
+        <img src="../Assests/logo.jpg" alt="Rustenburg Noord Primary Logo" class="logo" />
+        <h1>Rustenburg Noord Primary</h1>
+        <form class="search-form" action="#" method="get">
+          <input type="text" name="q" placeholder="Search..." />
+          <button type="submit">🔍</button>
+        </form>
+        <div class="hamburger" id="hamburger">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <nav>
+        <ul id="nav-menu">
+          <li><a href="../Source/about.html">About Us</a></li>
+          <li><a href="../Source/academics.html">Academics</a></li>
+          <li><a href="../Source/admissions.html">Admissions</a></li>
+          <li><a href="../Source/whysponsor.html">Why Sponsor us?</a></li>
+          <li><a href="../Source/contactus.html">Contact Us</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h2>Welcome to Rustenburg Noord Primary</h2>
+        <p>Empowering young minds through quality education and strong values.</p>
+        <a href="../Source/contactus.html" class="cta-button">Contact Us</a>
+      </div>
+    </section>
+
+    <section class="quick-links">
+      <div class="container">
+        <h3>Quick Links</h3>
+        <div class="links">
+          <a href="../Source/admissions.html">Admissions</a>
+          <a href="#">Latest News</a>
+          <a href="#">School Calendar</a>
+          <a href="#">Uniform Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="announcements">
+      <div class="container">
+        <h3>Latest Announcements</h3>
+        <ul>
+          <li>🏫 School reopens on 15 July for Term 3.</li>
+          <li>🎽 Sports Day scheduled for 21 June.</li>
+          <li>📄 Download the new stationery list for Grade 4.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mission-vision">
+      <div class="container">
+        <h3>Our Mission</h3>
+        <p class="mission-text">
+          To provide a nurturing and inclusive learning environment that empowers every learner to reach their full potential through academic excellence, values, and creativity.
+        </p>
+        <h3>Our Vision</h3>
+        <p class="vision-text">
+          To be a leading primary school in the region known for producing well-rounded, responsible, and future-ready learners.
+        </p>
+      </div>
+    </section>
+
+    <section class="student-life-background">
+      <section class="student-life">
+        <div class="container">
+          <h3>Life at Rustenburg Noord</h3>
+          <div class="student-columns">
+            <div class="column">
+              <img src="../Assests/1750331229741.jpg" alt="Group of smiling students" loading="lazy" />
+              <div class="overlay-text">Excellence at it's peak</div>
+            </div>
+            <div class="column">
+              <img src="../Assests/princ lv.jpg" alt="Principal with students in classroom" loading="lazy" />
+              <div class="overlay-text">Active, inclusive, and engaging classrooms</div>
+            </div>
+            <div class="column">
+              <img src="../Assests/sports kids.jpg" alt="Students in school sports event" loading="lazy" />
+              <div class="overlay-text">Exciting extracurricular and cultural activities</div>
+            </div>
+            <div class="column">
+              <img src="../Assests/1750331238153.jpg" alt="Brilliance and excellence during Sports Day" loading="lazy" />
+              <div class="overlay-text">Team spirit and fitness through school sports</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <section class="sponsor">
+  <div class="container">
+    <h3>Sponsored by FastPrint</h3>
+    <img src="../Assests/fast print.png" alt="FastPrint Logo" />
+    <p style="max-width: 700px; margin: 15px auto; font-size: 1.1rem; color: #333;">
+      FastPrint is an amazing printing partner that supports our school with high-quality prints, banners, and educational materials. We truly appreciate their commitment to excellence and community support!
+    </p>
+  </div>
+</section>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="school-info">
+        <p>&copy; 2025 Rustenburg Noord Primary</p>
+        <p>Responsibility • Caring • Trustworthiness • Fairness • Respect • Citizenship</p>
+        <p>
+          <a href="../Source/terms.html" style="color: #fff; text-decoration: underline;">
+            Terms and Conditions
+          </a>
+        </p>
+      </div>
+      <div class="social-media">
+        <a href="https://www.facebook.com/yourpage" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-square"></i> <span>Follow us on Facebook</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>

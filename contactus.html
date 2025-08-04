@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #fff; color: #333; line-height: 1.6; }
+    header { background: #00274d; color: white; padding: 15px 20px; display: flex; align-items: center; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    header img { height: 45px; width: auto; }
+    header h1 { margin: 0; font-size: 1.8rem; }
+
+    nav { background: #00274d; }
+    nav ul { display: flex; justify-content: center; list-style: none; padding: 10px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; padding: 10px 20px; }
+    nav a:hover, nav a.active { background: #cc0000; border-radius: 5px; }
+
+    .hero {
+      background: linear-gradient(to right, #cc0000, #a50000);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .contact-info {
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .contact-info h3 {
+      color: #004080;
+      margin-bottom: 15px;
+    }
+
+    .contact-info p {
+      margin: 10px 0;
+    }
+
+    .contact-info i {
+      color: #cc0000;
+      margin-right: 8px;
+    }
+
+    form {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    form h3 {
+      color: #004080;
+      margin-bottom: 15px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background: #cc0000;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    button:hover {
+      background: #a50000;
+    }
+
+    .map {
+      margin-top: 40px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: 0;
+    }
+
+    .social-follow {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .social-follow a {
+      color: #3b5998;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+
+    .social-follow a:hover {
+      color: #2d4373;
+    }
+
+    footer {
+      background-color: #00274d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.95rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+      header { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with logo -->
+  <header>
+    <img src="../Assests/logo.jpg" alt="Rustenburg Noord Primary Logo">
+    <h1>Rustenburg Noord Primary</h1>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="../Source/index.html">Home</a></li>
+       <li><a href="../Source/about.html">About Us</a></li>
+          <li><a href="../Source/academics.html">Academics</a></li>
+          <li><a href="../Source/admissions.html">Admissions</a></li>
+          <li><a href="../Source/whysponsor.html">Why Sponsor us?</a></li>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Contact Us</h2>
+    <p>We’re here to help you and answer any questions you may have.</p>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>School Contact Details</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Sunshine Street, Rustenburg</p>
+        <p><i class="fas fa-phone-alt"></i> +27 14 123 4567</p>
+        <p><i class="fas fa-envelope"></i> info@rustenburgnoordprimary.co.za</p>
+        <p><i class="fas fa-clock"></i> Mon–Fri: 7:30am – 3:00pm</p>
+      </div>
+
+      <!-- Contact Form -->
+      <form>
+        <h3>Send Us a Message</h3>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="text" placeholder="Subject" />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+<section class="map-section">
+  <h3 style="text-align:center; margin-bottom: 20px;">Find Us at Rustenburg Noord Primary</h3>
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3562.136632174602!2d27.24524047500166!3d-25.666797177411234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ebb1432890d0b2d%3A0x7c161992f0ae8004!2s56%20Johnson%20St%2C%20Rustenburg%20North%2C%20Rustenburg%2C%200299!5e0!3m2!1sen!2sza!4v1720019372603!5m2!1sen!2sza" 
+      width="600" 
+      height="450" 
+      style="border:0; position:absolute; top:0; left:0; width:100%; height:100%;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+
+    <!-- Facebook Section -->
+    <div class="social-follow">
+      <p>Follow us on Facebook</p>
+      <a href="https://www.facebook.com/YourSchoolPage" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-facebook-square"></i> Rustenburg Noord Primary
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Rustenburg Noord Primary • Responsibility • Caring • Trustworthiness • Fairness • Respect • Citizenship</p>
+  </footer>
+
+</body>
+</html>

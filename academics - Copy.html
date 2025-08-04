@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Academics</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    /* Global Reset & Typography */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { font-family: Arial, sans-serif; background:#fff; color:#333; line-height:1.6; }
+    
+    /* Header/Nav */
+    header { background:#00274d; color:#fff; padding:20px 0; }
+    .container { width:90%; max-width:1100px; margin:0 auto; }
+    .header-flex { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:15px; }
+    .logo { height:150px; }
+    nav ul { display:flex; justify-content:center; list-style:none; margin-top:10px; flex-wrap:wrap; }
+    nav a { color:#fff; text-decoration:none; padding:10px 20px; }
+    nav a:hover { background:#cc0000; border-radius:5px; }
+    .search-form { display:flex; align-items:center; gap:5px; }
+    .search-form input { padding:8px 10px; border:none; border-radius:3px; width:150px; }
+    .search-form button { padding:8px 12px; background:#cc0000; border:none; border-radius:3px; color:#fff; cursor:pointer; }
+    .search-form button:hover { background:#a50000; }
+    .hamburger { display:none; font-size:2rem; cursor:pointer; color:#fff; }
+    @media(max-width:768px) {
+      nav ul { flex-direction:column; background:#00274d; width:100%; display:none; padding:10px 0; }
+      nav ul.show { display:flex; }
+      .hamburger { display:block; }
+      .header-flex { flex-direction:column; align-items:flex-start; }
+      .search-form { margin-top:10px; }
+    }
+
+    /* Hero */
+    .hero { background:linear-gradient(to right,#cc0000,#a50000); color:#fff; padding:60px 20px; text-align:center; }
+    .hero h2 { margin-bottom:10px; font-size:2.5rem; }
+    
+    /* Section Styling */
+    section { padding:40px 0; }
+    .section-title { text-align:center; margin-bottom:30px; color:#00274d; font-size:2rem; }
+    
+    /* Curriculum Grid */
+    .curriculum-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
+    .subject-box { background:#f9f9f9; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .subject-box h4 { margin-bottom:15px; color:#004080; }
+    .subject-box p { font-size:0.95rem; color:#555; }
+    .subject-box ul { list-style:disc; margin-left:20px; font-size:0.9rem; color:#444; }
+    
+    /* Enrichment */
+    .enrichment-list { display:flex; flex-direction:column; gap:20px; max-width:800px; margin:0 auto; }
+    .enrichment-item { display:flex; gap:15px; align-items:center; }
+    .enrich-icon { font-size:2rem; color:#cc0000; width:40px; text-align:center; }
+    .enrichment-item h5 { margin-bottom:5px; color:#004080; }
+    
+    /* Footer */
+    footer { background:#00274d; color:#fff; text-align:center; padding:20px; font-size:0.95rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header + Navigation -->
+  <header>
+    <div class="container header-flex">
+      <img src="../Assests/logo.jpg" alt="Rustenburg Noord Primary Logo" class="logo" />
+      <h1>Rustenburg Noord Primary</h1>
+      <form class="search-form" action="#" method="get">
+        <input type="text" name="q" placeholder="Search..." />
+        <button type="submit">🔍</button>
+      </form>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="../source/index.html">Home</a></li>
+        <li><a href="../source/about.html">About Us</a></li>
+        <li><a href="../Source/admissions.html">Admissions</a></li>
+         <li><a href="../source/whysponsor.html">Why Sponsor Us?</a></li>
+        <li><a href="../source/contact.html">Contact Us</a></li>
+       
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h2>Our Academic Programmes</h2>
+    <p>Igniting curiosity, building skills, and nurturing young minds for lifelong learning.</p>
+  </section>
+
+  <!-- Core Curriculum -->
+  <section>
+    <h3 class="section-title">Core Curriculum</h3>
+    <div class="curriculum-grid container">
+      <div class="subject-box">
+        <h4>Mathematics</h4>
+        <p>Developing strong numeracy, problem-solving, and logical thinking skills through hands-on learning.</p>
+        <ul>
+          <li>Number sense & arithmetic</li>
+          <li>Geometry & measurement</li>
+          <li>Data handling & probability</li>
+        </ul>
+      </div>
+      <div class="subject-box">
+        <h4>Languages</h4>
+        <p>Building literacy, communication, and cultural appreciation in English and home languages.</p>
+        <ul>
+          <li>Reading, writing & comprehension</li>
+          <li>Oral communication skills</li>
+          <li>Creative expression</li>
+        </ul>
+      </div>
+      <div class="subject-box">
+        <h4>Natural Sciences</h4>
+        <p>Exploring the world through observation, experimentation, and inquiry-based learning.</p>
+        <ul>
+          <li>Life & environmental sciences</li>
+          <li>Physical sciences</li>
+          <li>Scientific method</li>
+        </ul>
+      </div>
+      <div class="subject-box">
+        <h4>Social Sciences</h4>
+        <p>Fostering knowledge of history, geography, culture, and responsible citizenship.</p>
+        <ul>
+          <li>Local & world history</li>
+          <li>Geography & sustainability</li>
+          <li>Civics & community awareness</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enrichment Programmes -->
+  <section>
+    <h3 class="section-title">Enrichment Programmes</h3>
+    <div class="enrichment-list container">
+      <div class="enrichment-item">
+        <span class="enrich-icon"><i class="fas fa-paint-brush"></i></span>
+        <div>
+          <h5>Art & Creativity Club</h5>
+          <p>Encouraging imaginative expression through painting, drawing, and crafts.</p>
+        </div>
+      </div>
+      <div class="enrichment-item">
+        <span class="enrich-icon"><i class="fas fa-running"></i></span>
+        <div>
+          <h5>Sports & Physical Education</h5>
+          <p>Promoting teamwork, fitness, and motor skills with a range of athletic activities.</p>
+        </div>
+      </div>
+      <div class="enrichment-item">
+        <span class="enrich-icon"><i class="fas fa-flask"></i></span>
+        <div>
+          <h5>Science & Nature Club</h5>
+          <p>Experiments, outdoor learning, and critical thinking in a fun environment.</p>
+        </div>
+      </div>
+      <div class="enrichment-item">
+        <span class="enrich-icon"><i class="fas fa-music"></i></span>
+        <div>
+          <h5>Music & Drama</h5>
+          <p>Fostering confidence and creativity through performance and ensemble work.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching Approach -->
+  <section>
+    <h3 class="section-title">Our Teaching Approach</h3>
+    <div class="container">
+      <p>At Rustenburg Noord Primary, we believe in a balanced, child-centered approach that combines:</p>
+      <ul style="margin-left:20px; margin-top:15px; color:#555;">
+        <li>Active learning through discussion, exploration, and real-world connections</li>
+        <li>Individualized support to help each learner reach their potential</li>
+        <li>Collaborative work to build social skills and peer learning</li>
+        <li>Assessment for learning: ongoing feedback rather than just exams</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 Rustenburg Noord Primary</p>
+      <p>Responsibility • Caring • Trustworthiness • Fairness • Respect • Citizenship</p>
+      <p><a href="../Source/terms.html" style="color:#cc0000; text-decoration:none;">Terms & Conditions</a></p>
+    </div>
+  </footer>
+
+  <!-- Hamburger Menu Script -->
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+    hamburger.addEventListener("click", () => {
+      nav-menu.classList.toggle("show");
+    });
+  </script>
+
+</body>
+</html>

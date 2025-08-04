@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admissions</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html, body { font-family: Arial, sans-serif; background:#fff; color:#333; line-height:1.6; }
+    .container { width:90%; max-width:1100px; margin:0 auto; padding:40px 0; }
+    header { background:#00274d; color:#fff; padding:20px 0; }
+    .header-flex { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:15px; }
+    .logo { height:150px; }
+    nav ul { display:flex; justify-content:center; list-style:none; margin-top:10px; flex-wrap:wrap;}
+    nav a { color:#fff; text-decoration:none; padding:10px 20px; }
+    nav a:hover, nav a.active { background:#cc0000; border-radius:5px; }
+    .search-form { display:flex; align-items:center; gap:5px; }
+    .search-form input { padding:8px 10px; border:none; border-radius:3px; width:150px; }
+    .search-form button { padding:8px 12px; background:#cc0000; border:none; border-radius:3px; color:#fff; cursor:pointer; }
+    .search-form button:hover { background:#a50000; }
+    .hamburger { display:none; font-size:2rem; cursor:pointer; color:#fff; }
+    @media(max-width:768px){
+      nav ul { flex-direction:column; background:#00274d; width:100%; display:none; padding:10px 0; }
+      nav ul.show { display:flex; }
+      .hamburger { display:block; }
+      .header-flex { flex-direction:column; align-items:flex-start; }
+      .search-form { margin-top:10px; }
+    }
+    .hero { background:linear-gradient(to right,#cc0000,#a50000); color:#fff; padding:60px 20px; text-align:center; }
+    .hero h2 { margin-bottom:10px; font-size:2.5rem; }
+    .step-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; margin-top:30px; }
+    .step-box { background:#f9f9f9; padding:20px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; }
+    .step-box .step-icon { font-size:3rem; color:#cc0000; margin-bottom:15px; }
+    .step-box h4 { margin-bottom:10px; color:#004080; }
+    .step-box p { font-size:0.95rem; color:#555; }
+    .apply-btn { display:inline-block; margin:40px auto 0; padding:15px 30px; background:#cc0000; color:#fff; text-decoration:none; font-size:1.1rem; border-radius:5px; transition:background 0.3s; }
+    .apply-btn:hover { background:#a50000; }
+    .faq-section { margin-top:60px; }
+    .faq-section h3 { text-align:center; color:#00274d; margin-bottom:30px; }
+    .faq-item { margin-bottom:20px; }
+    .faq-item h5 { cursor:pointer; background:#eaeaea; padding:10px 15px; border-radius:5px; }
+    .faq-item p { padding:10px 15px; display:none; border-left:3px solid #cc0000; background:#f9f9f9; }
+    footer { background:#00274d; color:#fff; text-align:center; padding:20px; font-size:0.95rem; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-flex">
+      <img src="../Assests/logo.jpg" alt="Logo" class="logo" />
+      <h1>Rustenburg Noord Primary</h1>
+      <form class="search-form" action="#" method="get">
+        <input type="text" name="q" placeholder="Search..." />
+        <button type="submit">🔍</button>
+      </form>
+      <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+    </div>
+    <nav><ul id="nav-menu">
+      <li><a href="../source/index.html">Home</a></li>
+      <li><a href="../source/about.html">About Us</a></li>
+      <li><a href="../Source/academics.html">Academics</a></li>
+      <li><a href="../Source/whysponsor.html">Why Sponsor Us?</a></li>
+      <li><a href="../Source/contactus.html">Contact Us</a></li>
+      
+    </ul></nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h2>Join Our Learning Family</h2>
+    <p>Start your child’s journey with Rustenburg Noord Primary – where growth, values, and excellence shine.</p>
+  </section>
+
+  <div class="container">
+    <!-- Admission Steps -->
+    <section>
+      <h3 style="text-align:center; color:#00274d;">How to Apply</h3>
+      <div class="step-grid">
+        <div class="step-box">
+          <div class="step-icon"><i class="fas fa-download"></i></div>
+          <h4>1. Download Application</h4>
+          <p>Grab the application form and stationery list from our website or collect a hard copy from school.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+          <h4>2. Complete & Submit</h4>
+          <p>Fill in details, attach required documents, and hand it to the school office or email admissions@school.co.za.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-icon"><i class="fas fa-comments"></i></div>
+          <h4>3. Interview & Tour</h4>
+          <p>Your child and family are invited for a brief interview and school tour to meet our community.</p>
+        </div>
+        <div class="step-box">
+          <div class="step-icon"><i class="fas fa-check-circle"></i></div>
+          <h4>4. Receive Offer</h4>
+          <p>We’ll let you know within 2 weeks—complete enrollment and prepare for a wonderful year ahead!</p>
+        </div>
+      </div>
+
+      <div style="text-align:center;">
+        <a href="application.pdf" class="apply-btn">Download Application Now</a>
+      </div>
+    </section>
+
+    <!-- Requirements -->
+    <section style="margin-top:60px;">
+      <h3 class="section-title">Admission Requirements</h3>
+      <ul style="margin-left:20px; color:#555;">
+        <li>Completed application form & school fee confirmation</li>
+        <li>Certified copy of birth certificate or identity document</li>
+        <li>Immunisation / vaccination record</li>
+        <li>Latest school report (if transferring)</li>
+        <li>Proof of residence (utility bill or affidavit)</li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+      <h3>Frequently Asked Questions</h3>
+      <div class="faq-item">
+        <h5>What is the application deadline?</h5>
+        <p>Applications for Term 1 close on October 31 each year. Late applications may be considered depending on availability.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Do you offer financial aid or scholarships?</h5>
+        <p>We offer limited bursaries for deserving families based on need and academic performance. Please contact our office for details.</p>
+      </div>
+      <div class="faq-item">
+        <h5>Can I tour the school before applying?</h5>
+        <p>Absolutely! We host open days each term. Book a tour via email or call our office to arrange a visit.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Rustenburg Noord Primary • Responsibility • Caring • Trustworthiness • Fairness • Respect • Citizenship</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('hamburger')
+      .addEventListener('click', () => document.getElementById('nav-menu').classList.toggle('show'));
+
+    document.querySelectorAll('.faq-item h5').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const ans = btn.nextElementSibling;
+        ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>

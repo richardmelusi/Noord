@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #00274d;
+      color: #fff;
+      padding: 20px 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      position: relative;
+    }
+
+    .logo {
+      height: 150px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+
+    nav a:hover {
+      background-color: #cc0000;
+      border-radius: 5px;
+    }
+
+    .search-form {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .search-form input[type="text"] {
+      padding: 8px 10px;
+      border: none;
+      border-radius: 3px;
+      width: 150px;
+    }
+
+    .search-form button {
+      padding: 8px 12px;
+      background-color: #cc0000;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .search-form button:hover {
+      background-color: #a50000;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        background-color: #00274d;
+        width: 100%;
+        display: none;
+        padding: 10px 0;
+      }
+
+      nav ul.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .search-form {
+        margin-top: 10px;
+      }
+    }
+
+    .hero {
+      background: linear-gradient(to right, #cc0000, #a50000);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+    }
+
+    .about-section {
+      margin-bottom: 40px;
+    }
+
+    .about-section h3 {
+      color: #cc0000;
+      margin-bottom: 15px;
+    }
+
+    .about-section p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+
+    .image-gallery {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .image-gallery img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member img {
+      width: 100%;
+      max-width: 380px;
+      height: auto;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+    }
+
+    .team-member h4 {
+      margin: 10px 0 5px;
+      color: #004080;
+    }
+
+    .team-member p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .principal-photo {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .principal-photo img {
+      max-width: 450px;
+      width: 100%;
+      border-radius: 52px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      object-fit: cover;
+    }
+
+    footer {
+      background-color: #00274d;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.95rem;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #cc0000;
+      font-weight: bold;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .image-gallery img {
+        max-width: 100%;
+      }
+
+      .team-member img {
+        max-width: 140px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-flex">
+      <img src="..//Assests/logo.jpg" alt="Rustenburg Noord Primary Logo" class="logo" />
+      <h1>Rustenburg Noord Primary</h1>
+      <form class="search-form" action="#" method="get">
+        <input type="text" name="q" placeholder="Search..." />
+        <button type="submit">🔍</button>
+      </form>
+      <div class="hamburger" id="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+    <nav>
+      <ul id="nav-menu">
+        <li><a href="./index.html">Home</a></li>
+         <li><a href="./academics.html">Academics</a></li>
+        <li><a href="./admissions.html">Admissions</a></li>
+        <li><a href="./whysponsor.html">Why Sponsor Us?</a></li>
+        <li><a href="./contactus.html">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>About Us</h2>
+    <p>Shaping tomorrow’s leaders through learning, values, and care.</p>
+  </section>
+
+  <div class="container">
+
+    <section class="about-section">
+      <h3>Who We Are</h3>
+      <p>
+        Rustenburg Noord Primary is a dynamic public school dedicated to academic excellence, personal growth, and inclusive education.
+      </p>
+    </section>
+
+    <section class="about-section">
+      <h3>Our Story</h3>
+      <p>
+        Founded over two decades ago, Rustenburg Noord Primary has grown into a vibrant educational institution known for strong community ties and passionate educators.
+      </p>
+    </section>
+
+    <section class="about-section">
+      <h3>Meet Our Team</h3>
+      <p>Our passionate and experienced team is dedicated to nurturing learners academically and emotionally.</p>
+
+      <div class="team-grid">
+        <div class="team-member">
+          <img src="../Assests/1749836540138.jpg" alt="Ms. Khuma – Grade 1 Teacher" loading="lazy">
+          <h4>Ms. Khuma</h4>
+          <p>Grade 1 Teacher – Kindness and early literacy learning.</p>
+        </div>
+        <div class="team-member">
+          <img src="../Assests/1753716423384.jpg" alt="Ms. De Klerk – Social Science" loading="lazy">
+          <h4>Ms. De Klerk</h4>
+          <p>Bestwos Social Science lesson unto learners.</p>
+        </div>
+        <div class="team-member">
+          <img src="../Assests/1749836554527.jpg" alt="Ms. Terblanche – English & Drama" loading="lazy">
+          <h4>Ms. Terblanche</h4>
+          <p>Confidence through poetry and performance.</p>
+        </div>
+        <div class="team-member">
+          <img src="../Assests/1750331363855.jpg" alt="Mr. Letshwiti – Mathematics Head" loading="lazy">
+          <h4>Mr. Letshwiti</h4>
+          <p>Engaging and practical math lessons.</p>
+        </div>
+        <div class="team-member">
+          <img src="../Assests/1750331440849.jpg" alt="Ms. Molwele –  Natural science teacher" loading="lazy">
+          <h4>Ms. Molwele</h4>
+          <p>Teaches natural sciences and navigating learners through science.</p>
+        </div>
+        <div class="team-member">
+          <img src="../Assests/1750331486886.jpg" alt="Ms. Sibiya – Sports & PE" loading="lazy">
+          <h4>Ms. Sibiya</h4>
+          <p>Promotes fitness and teamwork.</p>
+        </div>
+        <div class="team-member">
+          <img src="../Assests/1749836683865.jpg" alt="Ms. Bruyns – Life Skills" loading="lazy">
+          <h4>Ms. Bruyns</h4>
+          <p>Enages learners with Life skills leesons.</p>
+        </div>
+        <div class="team-member">
+          <img src="../Assests/1753716410908.jpg" alt="Ms. Marwane – Deputy principal" loading="lazy">
+          <h4>Ms. Marwane</h4>
+          <p>Meet our deputy principal who works hand-in-hand with our Principal to coordinate Noord Primary.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h3>Our Campus Life</h3>
+      <p>
+        From classrooms to sports fields, our school is alive with curiosity, teamwork, and creativity.
+      </p>
+      <div class="image-gallery">
+        <img src="../Assests/1750331229741.jpg" alt="Happy learners enjoying school" loading="lazy">
+        <img src="../Assests/1750332256440.jpg" alt="Children participating in school sports" loading="lazy">
+        <img src="../Assests/1750332199999.jpg" alt="Children exploring new trip adventures" loading="lazy">
+        <img src="../Assests/net.jpg" alt="Sports activities during break time" loading="lazy">
+        <img src="../Assests/smile kids.jpg" alt="Learners reading in the school library" loading="lazy">
+        <img src="../Assests/1750331263502.jpg" alt="Creative art activities in class" loading="lazy">
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h3>Meet Our Principal</h3>
+      <p>
+        Meet Our principal Ms Havenga who leads with passion, dedication, and a vision to create a welcoming school where every learner can shine.
+      </p>
+      <div class="principal-photo">
+        <img src="../assests/1750332119316.jpg" alt="Principal of Rustenburg Noord Primary" loading="lazy" />
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h3>Sponsored by FastPrint</h3>
+      <p>
+        <strong>FastPrint</strong> is proud to support our school. Their high-quality printing, service, and dedication to education make them a valued partner.
+      </p>
+      <div style="text-align:center;">
+        <img src="../Assests/fast print.png" alt="Sponsored by FastPrint" style="max-width:300px; width:100%; border-radius:10px;">
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>© 2025 Rustenburg Noord Primary</p>
+    <p>Responsibility • Caring • Trustworthiness • Fairness • Respect • Citizenship</p>
+    <p><a href="../Source/terms.html" style="color: #cc0000; text-decoration: none;">Terms and Conditions</a></p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById("hamburger");
+    const navMenu = document.getElementById("nav-menu");
+
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("show");
+    });
+  </script>
+</body>
+</html>
